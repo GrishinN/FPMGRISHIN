@@ -1,0 +1,22 @@
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   task1/.idea/vcs.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        task1/.idea/modules.xml
+        task1/.idea/task1.iml
+        task1/.idea/workspace.xml
+
+
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        task1/status.txt
