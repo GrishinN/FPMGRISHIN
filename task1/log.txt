@@ -1,0 +1,11 @@
+commit 5042518f7e093e232aefe9f07c8253ce8f07d787 (HEAD -> master)
+Author: Nikita <grishinnikitaa@gmail.com>
+Date:   Thu Feb 8 23:34:24 2018 +0300
+
+    add status.txt
+
+commit fe6bd47cc95e3dc0928f19b45c9a7418a19c5ade
+Author: Nikita <grishinnikitaa@gmail.com>
+Date:   Thu Feb 8 23:23:52 2018 +0300
+
+    add .gitignore
