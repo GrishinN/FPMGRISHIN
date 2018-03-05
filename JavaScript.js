@@ -1,6 +1,6 @@
 var photoPosts = [
     {
-        id: '',
+        id: '1',
         descriprion: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Иванов Иван',
@@ -218,9 +218,24 @@ var photoPosts = [
         }
     }
 
+    function compareDate(photoPostsA,photoPostsB) {
+        return photoPostsA.createdAt - photoPostsB.createdAt;
+    }
     function getPhotoPosts(skip , top , filterConfig) {
+        var newMass1;
+        var newMass = photoPosts.concat();
         if(filterConfig === undefined){
-
+            newMass.sort(compareDate);
+            return newMass.slice(skip,top);
+        }else{
+            for (var i = 0; i < photoPosts.length; i++) {
+                if (photoPosts[i].author == filterConfig)
+                {
+                    newMass1.push(photoPosts[i])
+                    newMass1.sort(compareDate);
+                    return newMass.slice(skip, top);
+                }
+            }
         }
 
     }
