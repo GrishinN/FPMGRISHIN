@@ -5,7 +5,7 @@ let photoPosts = [
     {
         id: '1',
         description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
-        createdAt: new Date('2018-02-23T23:00:00'),
+        createdAt: new Date('2010-02-23T23:00:00'),
         author: 'БУтырчик Андрей',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
         hashtags: ['#fpmi' , '#bsu' , '#js'],
@@ -14,7 +14,7 @@ let photoPosts = [
     {
         id: '2',
         description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
-        createdAt: new Date('2018-02-23T23:00:00'),
+        createdAt: new Date('2009-02-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
         hashtags: ['#fpmi' , '#bsu' , '#js'],
@@ -23,7 +23,7 @@ let photoPosts = [
     {
         id: '3',
         description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
-        createdAt: new Date('2018-02-23T23:00:00'),
+        createdAt: new Date('2011-02-23T23:00:00'),
         author: 'Гора ',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
         hashtags: ['#fpmi' , '#bsu' , '#js'],
@@ -68,7 +68,7 @@ let photoPosts = [
     {
         id: '8',
         description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
-        createdAt: new Date('2018-02-23T23:00:00'),
+        createdAt: new Date('2018-05-04T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
         hashtags: ['#fpmi' , '#bsu' , '#js'],
@@ -121,7 +121,7 @@ let photoPosts = [
     {
         id: '14',
         description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
-        createdAt: new Date('2018-02-23T23:00:00'),
+        createdAt: new Date('2017-06-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
         hashtags: ['#fpmi' , '#bsu' , '#js'],
@@ -130,14 +130,14 @@ let photoPosts = [
         id: '15',
         description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
         createdAt: new Date('2018-02-23T23:00:00'),
-        author: 'Иванов Иван',
+        author: 'Никита',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
         hashtags: ['#fpmi1' , '#bsu' , '#js'],
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },{
         id: '16',
         description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
-        createdAt: new Date('2018-03-23T23:00:00'),
+        createdAt: new Date('2013-03-13T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
         hashtags: ['#fpmi' , '#bsu' , '#js'],
@@ -155,7 +155,7 @@ let photoPosts = [
     {
         id: '18',
         description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
-        createdAt: new Date('2018-02-23T23:00:00'),
+        createdAt: new Date('2015-05-05T23:00:00'),
         author: 'Александр Петухов',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
         hashtags: ['#fpmi' , '#bsu' , '#js'],
@@ -202,7 +202,7 @@ let modul = (function() {
         return -1;
     }
 */
-    let getPhotoPost = function(value) { // 2й вариант // если ли особая разница что возвращать ?
+    let getPhotoPost = function(value) {
         let a = photoPosts.findIndex(item => item.id === value);
         if(a !== -1 ) {
             return photoPosts[a];
@@ -247,31 +247,25 @@ let modul = (function() {
 
     let addPhotoPost = function(PhotoPosts) {
         if(validatePhotoPost(PhotoPosts)){
-            if(photoPosts.push(PhotoPosts)) {
-
-                return true;
-            }
+            photoPosts.push(PhotoPosts);
+            return true;
         }
         return false;
     }
 
     let editPhotoPost = function(id , PhotoPosts ) {
-        let item = photoPosts.findIndex(item => item.id === id);
-        if(validatePhotoPost(photoPosts[item])){
+        let index = photoPosts.findIndex(item => item.id === id);
+        if(validatePhotoPost(photoPosts[index])){
             for(let key in PhotoPosts){
-                if(key == "description"){
-                    photoPosts[item].description = PhotoPosts[key];
-                }
-                if(key == "createdAt"){
-                    photoPosts[item].createdAt = PhotoPosts[key];
-                }
-                if(key == "photoLink"){
-                    photoPosts[item].photoLink = PhotoPosts[key];
-                }
-                if(key == "hashtags"){
-                    photoPosts[item].hashtags = PhotoPosts[key];
+                if(key !== "author" && key !== "id" && key !== "createdAt") {
+                    photoPosts[index][key] = PhotoPosts[key];
+                    return true;
+                }else {
+                    return false;
                 }
             }
+        }else {
+            return false;
         }
     }
 
@@ -279,51 +273,32 @@ let modul = (function() {
         return photoPostsA.createdAt - photoPostsB.createdAt;
     }
     let getPhotoPosts = function(skip , top , filterConfig) { // in
-        var newMass1 =[];
-        var newMass = photoPosts.concat();
+
+        let newMass_posts = photoPosts.concat();
         if(filterConfig === undefined){
-            newMass.sort(compareDate);
-            return newMass.slice(skip,skip+top);
+            newMass_posts.reverse(newMass_posts.sort(compareDate));
+            return newMass_posts.slice(skip,skip+top);
         }else{
-            for(let key in filterConfig)
-            {
-                if(key == "author"){
-                    for (let i = 0; i < photoPosts.length; i++) {
-
-                        if (photoPosts[i].author === filterConfig[key]) // localeCompare
-                        {
-                            newMass1.push(photoPosts[i]);
-                        }
-                    }
-                    newMass1.sort(compareDate);
-                    return newMass1.slice(skip,skip+top);;
-                }
-                if(key == "createdAt"){
-                    for (let i = 0; i < photoPosts.length; i++) {
-
-                        if (photoPosts[i].createdAt === filterConfig[key]) // localeCompare
-                        {
-                            newMass1.push(photoPosts[i]);
-                        }
-                    }
-                    newMass1.sort(compareDate);
-                    return newMass1.slice(skip,skip+top);;
-                }
-                if(key == "hashtags"){
-                    for (let i = 0; i < photoPosts.length; i++) {
-
-
-                        if(photoPosts[i].hashtags.some(hash)) {
-                            newMass1.push(photoPosts[i]);
-                        }
-                    }
-                    newMass1.sort(compareDate);
-                    return newMass1.slice(skip,skip+top);;
-                }
-                function hash(number) {
-                    return number === filterConfig[key];
-                }
+            if(filterConfig.author){
+                newMass_posts = newMass_posts.filter(function (item) {
+                    return item.author === filterConfig.author;
+                });
             }
+            if(filterConfig.createdAt){
+                newMass_posts = newMass_posts.filter((function (item) {
+                    return Date.parse(item.createdAt) > Date.parse(filterConfig.createdAt);
+                }));
+            }
+            if(filterConfig.hashtags){
+                newMass_posts = newMass_posts.filter(function (item) {
+                    return item.hashtags.some(function (itemm) {
+                        return itemm === filterConfig.hashtags;
+                    });
+
+                })
+            }
+            return newMass_posts.slice(skip,skip+top);
+
 
         }
 
@@ -346,13 +321,13 @@ let correctPost = {
     photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
     hashtags: ['#fpmi' , '#bsu' , '#js'],
     likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
-}
+};
 let wrongPost = {
     description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
     createdAt: new Date('2018-02-14T23:00:00'),
     author: 'Степанов степан',
-    photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
-}
+    photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg'
+};
 ///////////////////////////////////////////////////////
 console.log('array of photoposts:');
 console.log(photoPosts);
@@ -367,15 +342,15 @@ console.log(modul.getPhotoPost(['aaa', '8']));
 console.log('\nmethod addPhotoPost');
 console.log('add correct post');
 console.log(modul.addPhotoPost(correctPost));
-console.log('array of photoposts after:')
+console.log('array of photoposts after:');
 console.log(photoPosts);
 console.log('add wrong post');
 console.log(modul.addPhotoPost(wrongPost));
-console.log('array of photoposts after:')
+console.log('array of photoposts after:');
 console.log(photoPosts);
 console.log('no args');
 console.log(modul.addPhotoPost());
-console.log('array of photoposts after:')
+console.log('array of photoposts after:');
 console.log(photoPosts);
 //////////////////////////////////////////////////////////
 console.log('\n\nmethod remove photopost');
@@ -391,7 +366,7 @@ console.log('removePhotopost([4, 1]) wrong type of arg');
 console.log(modul.removePhotoPost([4, 1]));
 console.log('removePhotopost() no args');
 console.log(modul.removePhotoPost());
-console.log('\n\narray of photoposts after:')
+console.log('\n\narray of photoposts after:');
 console.log(photoPosts);
 /////////////////////////////////////////////////////////////
 console.log('\n method editPhotoPost');
@@ -406,11 +381,11 @@ console.log('\n\narray of photoposts after:');
 console.log(photoPosts);
 /////////////////////////////////////////////////////////////
 console.log('\n\nmethod getPhotoPosts');
-console.log('getPhotoPosts(3, 3):')
-console.log(modul.getPhotoPosts(3, 3));
-console.log('getPhotoPosts(5, 7):')
+console.log('getPhotoPosts(0, 10):');
+console.log(modul.getPhotoPosts(0, 10));
+console.log('getPhotoPosts(10, 10):');
 console.log(modul.getPhotoPosts(5, 7));
-console.log('getPhotoPosts(5, 7 , {author: \'Иванов Иван\'}):')
-console.log(modul.getPhotoPosts(5, 7,{author: 'Иванов Иван'}));
-console.log('getPhotoPosts(5, 7 , {hashtags: \'#fpmi1\'}):')
-console.log(modul.getPhotoPosts(0, 10,{hashtags: '#fpmi1'}));
+console.log('getPhotoPosts(0, 10 , {author: \'Иванов Иван\'}):');
+console.log(modul.getPhotoPosts(0, 10,{author: 'Иванов Иван'}));
+console.log('getPhotoPosts(0, 10 , {author: \'Никита\' ,hashtags: \'#fpmi1\'}):');
+console.log(modul.getPhotoPosts(0, 10,{author: 'Никита' ,hashtags: '#fpmi1'}));
