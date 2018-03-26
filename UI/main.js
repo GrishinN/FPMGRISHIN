@@ -245,9 +245,9 @@ let modul = (function() {
     }
 
 
-    let addPhotoPost = function(PhotoPosts) {
-        if(validatePhotoPost(PhotoPosts)){
-            photoPosts.push(PhotoPosts);
+    let addPhotoPost = function(photoPost) {
+        if(validatePhotoPost(photoPost)){
+            photoPosts.push(photoPost);
             return true;
         }
         return false;
@@ -257,13 +257,13 @@ let modul = (function() {
         let index = photoPosts.findIndex(item => item.id === id);
         if(validatePhotoPost(photoPosts[index])){
             for(let key in PhotoPosts){
-                if(key !== "author" && key !== "id" && key !== "createdAt") {
+                if(key !== "author" && key !== "id" && key !== "createdAt" && key !== "likes" && key !== "hashtags") {
                     photoPosts[index][key] = PhotoPosts[key];
-                    return true;
                 }else {
                     return false;
                 }
             }
+            return true;
         }else {
             return false;
         }
@@ -371,8 +371,8 @@ console.log(photoPosts);
 /////////////////////////////////////////////////////////////
 console.log('\n method editPhotoPost');
 console.log('\n Correct change of post');
-console.log(modul.editPhotoPost('1', {description: '123456'}));
-console.log(modul.editPhotoPost('2', {description: '123456' , photoLink: 'yandex.ru' }));
+console.log(modul.editPhotoPost('1', {description: '123456' }));
+console.log(modul.editPhotoPost('2', {description: '123456' , photoLink: 'yandex.ru' , hashtags: '#fpmi1'}));
 console.log('\n\narray of photoposts after:');
 console.log(photoPosts);
 console.log('\n Wrong change of post');
