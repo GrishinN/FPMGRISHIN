@@ -1,19 +1,19 @@
 //var foto= document.getElementsByClassName('foto');
-
+let user = "Никита";
 
 let photoPosts = [
     {
         id: '1',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2010-02-23T23:00:00'),
         author: 'БУтырчик Андрей',
-        photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
+        photoLink: '1.jpg',
         hashtags: ['#fpmi' , '#bsu' , '#js'],
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },
     {
         id: '2',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2009-02-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -22,7 +22,7 @@ let photoPosts = [
     },
     {
         id: '3',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2011-02-23T23:00:00'),
         author: 'Гора ',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -31,16 +31,16 @@ let photoPosts = [
     },
     {
         id: '4',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Alex',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
-        hashtags: ['#fpmi' , '#bsu' , '#js'],
+        hashtags: ['#fpmi1' , '#bsu' , '#js'],
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },
     {
         id: '5',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'NAgibator',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -49,7 +49,7 @@ let photoPosts = [
     },
     {
         id: '6',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('1999-04-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -58,7 +58,7 @@ let photoPosts = [
     },
     {
         id: '7',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -67,7 +67,7 @@ let photoPosts = [
     },
     {
         id: '8',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-05-04T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -76,7 +76,7 @@ let photoPosts = [
     },
     {
         id: '9',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2013-02-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -85,7 +85,7 @@ let photoPosts = [
     },
     {
         id: '10',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'lena lena',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -94,7 +94,7 @@ let photoPosts = [
     },
     {
         id: '11',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -103,7 +103,7 @@ let photoPosts = [
     },
     {
         id: '12',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-02-25T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -111,71 +111,71 @@ let photoPosts = [
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },{
         id: '13',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2015-02-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
-        hashtags: ['#fpmi' , '#bsu' , '#js'],
+        hashtags: ['#fpmi1' , '#bsu' , '#js'],
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },
     {
         id: '14',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2017-06-23T23:00:00'),
         author: 'Иванов Иван',
-        photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
+        photoLink: '1.jpg',
         hashtags: ['#fpmi' , '#bsu' , '#js'],
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },{
         id: '15',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Бла бла бла бла',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Никита',
-        photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
+        photoLink: '1.jpg',
         hashtags: ['#fpmi1' , '#bsu' , '#js'],
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },{
         id: '16',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2013-03-13T23:00:00'),
         author: 'Иванов Иван',
-        photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
+        photoLink: '1.jpg',
         hashtags: ['#fpmi' , '#bsu' , '#js'],
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },
     {
         id: '17',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2016-02-23T23:00:00'),
         author: 'Иванов Иван',
-        photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
+        photoLink: '1.jpg',
         hashtags: ['#fpmi1' , '#bsu' , '#js'],
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },
     {
         id: '18',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2015-05-05T23:00:00'),
         author: 'Александр Петухов',
-        photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
-        hashtags: ['#fpmi' , '#bsu' , '#js'],
+        photoLink: '1.jpg',
+        hashtags: ['#fpmi1' , '#bsu' , '#js'],
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },
     {
         id: '19',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету эстафету эстафету эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Вася Пупкин',
-        photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
-        hashtags: ['#fpmi' , '#bsu' , '#js'],
+        photoLink: '1.jpg',
+        hashtags: ['#fpmi1' , '#bsu' , '#js'],
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },
     {
         id: '20',
-        description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
+        descriprion: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Никита ',
-        photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
+        photoLink: '1.jpg',
         hashtags: ['#fpmi' , '#bsu' , '#js'],
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     }
@@ -220,7 +220,7 @@ let modul = (function() {
         if((typeof photoPosts.id !== "string") || photoPosts.id.length === 0 || (typeof (photoPosts.id) === 'undefined')) {
             return false;
         }
-        if((typeof photoPosts.description !== "string") || photoPosts.description.length === 0 || photoPosts.description.length > 200 || typeof (photoPosts.description) === 'undefined') {
+        if((typeof photoPosts.descriprion !== "string") || photoPosts.descriprion.length === 0 || photoPosts.descriprion.length > 200 || typeof (photoPosts.descriprion) === 'undefined') {
             return false;
         }
         if(typeof photoPosts.createdAt !== "object" || photoPosts.createdAt.length === 0 || typeof (photoPosts.createdAt) === 'undefined')   {
@@ -313,79 +313,242 @@ let modul = (function() {
 
 })();
 
-let correctPost = {
-    id: '25',
-    description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
-    createdAt: new Date('2018-02-14T23:00:00'),
-    author: 'Степанов степан',
-    photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
-    hashtags: ['#fpmi' , '#bsu' , '#js'],
-    likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
-};
-let wrongPost = {
-    description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
-    createdAt: new Date('2018-02-14T23:00:00'),
-    author: 'Степанов степан',
-    photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg'
-};
-///////////////////////////////////////////////////////
-console.log('array of photoposts:');
+
+let domFunction = (function () {
+
+    function formatDate(date) {
+
+        let dd = date.getDate();
+        if (dd < 10) dd = '0' + dd;
+
+        let mm = date.getMonth() + 1;
+        if (mm < 10) mm = '0' + mm;
+
+        let yy = date.getFullYear() % 100;
+        if (yy < 10) yy = '0' + yy;
+
+        return dd + '.' + mm + '.' + yy;
+    };
+
+    let showPhotoPosts = function (arrayPhotoPosts) {
+        arrayPhotoPosts.reverse();
+        arrayPhotoPosts.forEach(function (value) {
+            addPhotoPost(value);
+        });
+    };
+
+    let addPhotoPost = function (photoPost) {
+        const templatePhotoPost =
+            `<div class="column" id="${photoPost.id}">`+
+            `<div class="foto" ><img src="${photoPost.photoLink}"></div>` +
+            `<div class="ddd">` +
+            `<i class="far fa-thumbs-up"></i>`+
+            `</div>` +
+            `<div class="descriprion"><p1>${photoPost.descriprion}</p1></div>` +
+            `<div class="hashtag"><p1>${photoPost.hashtags}</p1></div>` +
+            `<div class="date_author"><p1>${photoPost.author}${formatDate(photoPost.createdAt)}</p1></div>` +
+            `</div>`;
+
+        let hed = document.getElementsByClassName('len1');
+        let newPost = document.createElement('template');
+        newPost.innerHTML = templatePhotoPost;
+        hed[0].appendChild(newPost.content);
+    };
+
+    let deletePhotoPost = function (id) {
+        let photoPost = document.getElementById(id);
+        if(modul.removePhotoPost(id)){
+            photoPost.remove();
+        }
+    }
+
+    let editPhotoPost = function (id , photoPost) {
+        let post = document.getElementById(id);
+        if(modul.editPhotoPost(id,photoPost)){
+            if('descriprion' in photoPost){
+                let descrip_mas = post.getElementsByClassName('descriprion');
+                let descrip = descrip_mas[0].firstChild;
+                descrip.textContent = photoPost.descriprion;
+            }
+            if('photoLink' in photoPost){
+                let photoLink_mas = post.getElementsByClassName('foto');
+                let photoLink = photoLink_mas[0].firstChild;
+                photoLink.src = photoPost.photoLink;
+            }
+        }
+
+    }
+
+    let authUser = function ( ) {
+        if(user){
+            let hed = document.getElementsByClassName('container1');
+            let pageSettings = document.createElement('nav');
+            let menu = document.createElement('ul');
+            menu.className = 'menu';
+            hed[0].appendChild(pageSettings);
+            pageSettings.appendChild(menu);
+
+            let liAuthor = document.createElement('li');
+            let singInLink = document.createElement('a');
+            singInLink.href='#';
+            singInLink.textContent = user;
+            liAuthor.appendChild(singInLink);
+            menu.appendChild(liAuthor);
+
+            let liAdd = document.createElement('li');
+            let fotoAdd = document.createElement('i');
+            fotoAdd.className = 'fas fa-plus-circle';
+            liAdd.appendChild(fotoAdd);
+            menu.appendChild(liAdd);
+
+            let liOut = document.createElement('li');
+            let formOut = document.createElement('form');
+            let buttonLogout = document.createElement('button');
+            buttonLogout.className = 'out';
+            buttonLogout.textContent = 'Logout';
+            liOut.appendChild(formOut);
+            formOut.appendChild(buttonLogout);
+            menu.appendChild(liOut);
+
+            let posts = document.getElementsByClassName('column');
+            let postsArray = Array.prototype.slice.call(posts);
+            postsArray.forEach(function (item) {
+                let block = item.getElementsByClassName('ddd');
+                let edit = document.createElement('i');
+                edit.className = 'fas fa-edit';
+                block[0].appendChild(edit);
+
+                let deleteElement = document.createElement('i');
+                deleteElement.className = 'fas fa-trash-alt';
+                block[0].appendChild(deleteElement);
+
+            })
+
+        }else{
+            let hed = document.getElementsByClassName('container1');
+            let pageSettings = document.createElement('nav');
+            let menu = document.createElement('ul');
+            menu.className = 'menu';
+            hed[0].appendChild(pageSettings);
+            pageSettings.appendChild(menu);
+
+            let liIn = document.createElement('li');
+            let formIn = document.createElement('form');
+            let buttonIn = document.createElement('button');
+            buttonIn.className = 'out';
+            buttonIn.textContent = 'LOG IN';
+            liIn.appendChild(formIn);
+            formIn.appendChild(buttonIn);
+            menu.appendChild(liIn);
+        }
+    }
+
+    let filterUsers = function () {
+        let dataUsers = document.getElementById('name');
+        photoPosts.forEach(function (item) {
+            let userName = document.createElement('option');
+            userName.value = item.author;
+            dataUsers.appendChild(userName);
+        })
+    };
+
+    let likePhoto = function(id) {
+        let post = document.getElementById(id);
+        let like = post.getElementsByClassName('far fa-thumbs-up');
+        like[0].style.color = '#ff0000';
+    }
+
+    let unLikePhoto = function (id) {
+        let post = document.getElementById(id);
+        let unLike = post.getElementsByClassName('far fa-thumbs-up');
+        unLike[0].style.color = '#000000';
+    }
+
+    let filterHashtags = function () {
+        let dataUsers = document.getElementById('hashtags');
+        let setHashtags = new Set();
+        photoPosts.forEach(function (item) {
+            item.hashtags.forEach(function (hashtag) {
+                setHashtags.add(hashtag);
+            });
+        });
+        setHashtags.forEach(function (item) {
+            let hashtag = document.createElement('option');
+            hashtag.value = item;
+            dataUsers.appendChild(hashtag);
+        })
+    };
+    return {
+        filterUsers,
+        filterHashtags,
+        unLikePhoto,
+        likePhoto,
+        authUser,
+        editPhotoPost,
+        deletePhotoPost,
+        showPhotoPosts,
+        addPhotoPost
+    }
+})();
+
+
+
+function showPhotoPosts(skip, top, filterConfig) {
+    let postsArray = modul.getPhotoPosts(skip, top, filterConfig);
+    if (typeof postsArray === 'object') {
+        domFunction.showPhotoPosts(postsArray);
+        return true;
+    }
+    return false;
+}
+
+function editPhotoPost(id,photoPost) {
+    domFunction.editPhotoPost(id,photoPost);
+}
+
+function deletePhotoPost(id) {
+    domFunction.deletePhotoPost(id);
+}
+
+function authUser() {
+    domFunction.authUser();
+}
+
+function like(id) {
+    domFunction.likePhoto(id);
+}
+
+function addPhotoPosts() {
+    if (modul.addPhotoPost(PhotoPost)) {
+        domFunction.addPhotoPost(PhotoPost);
+        return true;
+    }
+    return false;
+}
+
+
+showPhotoPosts(0,10);
+deletePhotoPost('15');
+
+editPhotoPost('17', {author: '1234567777'});
+
+authUser();
+like('19');
+domFunction.filterHashtags();
+domFunction.filterUsers();
 console.log(photoPosts);
-console.log('\mehtod getPhotoPost');
-console.log("The result of the method getPhotopost('5')");
-console.log(modul.getPhotoPost('5'));
-console.log('getPhotopost(21) no such id in the array');
-console.log(modul.getPhotoPost('21'));
-console.log("getPhotopost(['aaa', '8']) wrong type of arg");
-console.log(modul.getPhotoPost(['aaa', '8']));
-////////////////////////////////////////////////////////
-console.log('\nmethod addPhotoPost');
-console.log('add correct post');
-console.log(modul.addPhotoPost(correctPost));
-console.log('array of photoposts after:');
-console.log(photoPosts);
-console.log('add wrong post');
-console.log(modul.addPhotoPost(wrongPost));
-console.log('array of photoposts after:');
-console.log(photoPosts);
-console.log('no args');
-console.log(modul.addPhotoPost());
-console.log('array of photoposts after:');
-console.log(photoPosts);
-//////////////////////////////////////////////////////////
-console.log('\n\nmethod remove photopost');
-console.log('removePhotopost(5)');
-console.log(modul.removePhotoPost('5'));
-console.log('removePhotopost(10)');
-console.log(modul.removePhotoPost('10'));
-console.log('removePhotopost(4)');
-console.log(modul.removePhotoPost('4'));
-console.log('removePhotopost(50) no such ID in array');
-console.log(modul.removePhotoPost(50));
-console.log('removePhotopost([4, 1]) wrong type of arg');
-console.log(modul.removePhotoPost([4, 1]));
-console.log('removePhotopost() no args');
-console.log(modul.removePhotoPost());
-console.log('\n\narray of photoposts after:');
-console.log(photoPosts);
-/////////////////////////////////////////////////////////////
-console.log('\n method editPhotoPost');
-console.log('\n Correct change of post');
-console.log(modul.editPhotoPost('1', {description: '123456' }));
-console.log(modul.editPhotoPost('2', {description: '123456' , photoLink: 'yandex.ru' , hashtags: '#fpmi1'}));
-console.log('\n\narray of photoposts after:');
-console.log(photoPosts);
-console.log('\n Wrong change of post');
-console.log(modul.editPhotoPost('3', {author: '123456'}));
-console.log('\n\narray of photoposts after:');
-console.log(photoPosts);
-/////////////////////////////////////////////////////////////
-console.log('\n\nmethod getPhotoPosts');
-console.log('getPhotoPosts(0, 10):');
-console.log(modul.getPhotoPosts(0, 10));
-console.log('getPhotoPosts(10, 10):');
-console.log(modul.getPhotoPosts(5, 7));
-console.log('getPhotoPosts(0, 10 , {author: \'Иванов Иван\'}):');
-console.log(modul.getPhotoPosts(0, 10,{author: 'Иванов Иван'}));
-console.log('getPhotoPosts(0, 10 , {author: \'Никита\' ,hashtags: \'#fpmi1\'}):');
-console.log(modul.getPhotoPosts(0, 10,{author: 'Никита' ,hashtags: '#fpmi1'}));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
