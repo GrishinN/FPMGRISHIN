@@ -2,10 +2,14 @@ let http = require('http');
 let fs = require('fs');
 
 http.createServer(function (request, response) {
-
-    console.log(`Запрошенный адрес: ${request.url}`);
-    if (request.url.startsWith('/public/')) {
-        let filePath = request.url.substr(1);
+    if (request.url.startsWith("/")) {
+        let filePath = '';
+        if(request.url === '/') {
+            filePath = './public/index.html';
+        }
+        else {
+            filePath = './public' + request.url;
+        }
         fs.readFile(filePath, function (error, data) {
 
             if (error) {
@@ -21,4 +25,6 @@ http.createServer(function (request, response) {
     else {
         response.end('Error!');
     }
-}).listen(5000);
+}).listen(3000, function() {
+    console.log('server is running 3000');
+});
