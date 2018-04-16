@@ -30,7 +30,7 @@ let domFunction = (function () {
             `<div class="ddd">` +
             `<i class="far fa-thumbs-up"></i>`+
             `</div>` +
-            `<div class="descriprion"><p1>${photoPost.descriprion}</p1></div>` +
+            `<div class="description"><p1>${photoPost.description}</p1></div>` +
             `<div class="hashtag"><p1>${photoPost.hashtags}</p1></div>` +
             `<div class="author">${photoPost.author}</div>` +
             `<div class="date"><p1>${formatDate(photoPost.createdAt)}</p1></div>` +
@@ -52,10 +52,10 @@ let domFunction = (function () {
     let editPhotoPost = function (id , photoPost) {
         let post = document.getElementById(id);
         if(modul.editPhotoPost(id,photoPost)){
-            if('descriprion' in photoPost){
-                let descrip_mas = post.getElementsByClassName('descriprion');
+            if('description' in photoPost){
+                let descrip_mas = post.getElementsByClassName('description');
                 let descrip = descrip_mas[0].firstChild;
-                descrip.textContent = photoPost.descriprion;
+                descrip.textContent = photoPost.description;
             }
             if('photoLink' in photoPost){
                 let photoLink_mas = post.getElementsByClassName('foto');
@@ -104,12 +104,10 @@ let domFunction = (function () {
 
                 let author = item.getElementsByClassName('author');
                 if(author[0].textContent === user ) {
-
                     let block = item.getElementsByClassName('ddd');
                     let edit = document.createElement('i');
                     edit.className = 'fas fa-edit';
                     block[0].appendChild(edit);
-
                     let deleteElement = document.createElement('i');
                     deleteElement.className = 'fas fa-trash-alt';
                     block[0].appendChild(deleteElement);
