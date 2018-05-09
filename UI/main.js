@@ -160,6 +160,24 @@ let photoPosts = [
     },
     {
         id: '19',
+        description: 'В универе',
+        createdAt: new Date('2018-02-23T23:00:00'),
+        author: 'Галя',
+        photoLink: '1.jpg',
+        hashtags: ['#fpmi1' , '#bsu' , '#js'],
+        likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
+    },
+    {
+        id: '20',
+        description: 'я на районе',
+        createdAt: new Date('2018-02-23T23:00:00'),
+        author: 'Витя47',
+        photoLink: '1.jpg',
+        hashtags: ['#fpmi' , '#bsu' , '#js'],
+        likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
+    },
+    {
+        id: '21',
         description: 'Женская сборная Беларуси выиграла эстафету эстафету эстафету эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Вася Пупкин',
@@ -168,12 +186,12 @@ let photoPosts = [
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },
     {
-        id: '20',
-        description: 'Женская сборная Беларуси выиграла эстафету',
+        id: '22',
+        description: 'пресую студентов',
         createdAt: new Date('2018-02-23T23:00:00'),
-        author: 'Никита',
+        author: 'Галя',
         photoLink: '1.jpg',
-        hashtags: ['#fpmi' , '#bsu' , '#js'],
+        hashtags: ['#студенты'],
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     }
 ];
@@ -234,12 +252,29 @@ let modul = (function() {
             return false;
         }
         function checkHashtags(photoPosts) {
-            return photoPosts.hashtags.every(function (item) {
-                return item.charAt(0) === "#";
-            });
+            for(let tag of photoPosts.hashtags){
+                if(tag.charAt(0) !== "#"){
+                    return false;
+                }
+            }
+            return true;
         }
         return true;
     }
+
+    let likePhoto = function (id) {
+        let post = getPhotoPost(id);
+        if (post) {
+            let idxUser = post.likes.indexOf(user);
+            if (idxUser === -1) {
+                post.likes.push(user);
+                return true
+            }
+            post.likes.splice(idxUser, 1);
+        }
+        return false;
+
+    };
 
 
     let addPhotoPost = function(photoPost) {
@@ -251,11 +286,24 @@ let modul = (function() {
     }
 
     let editPhotoPost = function(id , PhotoPosts ) {
-        let index = photoPosts.findIndex(item => item.id === id);
-        if(validatePhotoPost(photoPosts[index])){
+        let post = modul.getPhotoPost(id);
+        let clonePost = {};
+        for (let key in post) {
+            clonePost[key] = post[key];
+        }
+        if(PhotoPosts.description){
+            clonePost.description = PhotoPosts.description;
+        }
+        if(PhotoPosts.hashtags){
+            clonePost.hashtags = PhotoPosts.hashtags;
+        }
+        if(PhotoPosts.photoLink){
+            clonePost.photoLink = PhotoPosts.photoLink;
+        }
+        if(validatePhotoPost(clonePost)){
             for(let key in PhotoPosts){
-                if(key !== "author" && key !== "id" && key !== "createdAt" && key !== "likes" && key !== "hashtags") {
-                    photoPosts[index][key] = PhotoPosts[key];
+                if(key !== "author" && key !== "id" && key !== "createdAt" && key !== "likes") {
+                    post[key] = PhotoPosts[key];
                 }else {
                     return false;
                 }
@@ -274,7 +322,7 @@ let modul = (function() {
         let newMass_posts = photoPosts.concat();
         if(filterConfig === undefined){
             newMass_posts.reverse(newMass_posts.sort(compareDate));
-            return newMass_posts.slice(skip,skip+top);
+            return newMass_posts.slice(skip,+skip + +top);
         }else{
             if(filterConfig.author){
                 newMass_posts = newMass_posts.filter(function (item) {
@@ -303,10 +351,10 @@ let modul = (function() {
     return {
         getPhotoPost,
         getPhotoPosts,
+        likePhoto,
         addPhotoPost,
         editPhotoPost,
         removePhotoPost
     }
 
 })();
-

@@ -1,4 +1,4 @@
-let user = "Никита";
+let user = "";
 
 let domFunction = (function () {
 
@@ -21,21 +21,26 @@ let domFunction = (function () {
         arrayPhotoPosts.forEach(function (value) {
             addPhotoPost(value);
         });
+        let hed = document.querySelector('.len1');
+        events.eLikePhoto(hed);
+        events.eDeletePhotoPost(hed);
+        events.eEdit(hed);
+
     };
 
     let addPhotoPost = function (photoPost) {
+
         const templatePhotoPost =
             `<div class="column" id="${photoPost.id}">`+
             `<div class="foto" ><img src="${photoPost.photoLink}"></div>` +
             `<div class="ddd">` +
-            `<i class="far fa-thumbs-up"></i>`+
+            `<i class="far fa-thumbs-up" ></i>`+
             `</div>` +
             `<div class="description"><p1>${photoPost.description}</p1></div>` +
             `<div class="hashtag"><p1>${photoPost.hashtags}</p1></div>` +
             `<div class="author">${photoPost.author}</div>` +
             `<div class="date"><p1>${formatDate(photoPost.createdAt)}</p1></div>` +
             `</div>`;
-
         let hed = document.getElementsByClassName('len1');
         let newPost = document.createElement('template');
         newPost.innerHTML = templatePhotoPost;
@@ -47,7 +52,7 @@ let domFunction = (function () {
         if(modul.removePhotoPost(id)){
             photoPost.remove();
         }
-    }
+    };
 
     let editPhotoPost = function (id , photoPost) {
         let post = document.getElementById(id);
@@ -62,14 +67,41 @@ let domFunction = (function () {
                 let photoLink = photoLink_mas[0].firstChild;
                 photoLink.src = photoPost.photoLink;
             }
+            if('hashtags' in photoPost){
+                let hashtags_mas = post.getElementsByClassName('hashtag');
+                let photoLink = hashtags_mas[0].firstChild;
+                photoLink.textContent = photoPost.hashtags;
+            }
+            return true;
         }
+        return false;
+    }
 
+    let authUser_functions = function () {
+
+        let posts = document.getElementsByClassName('column');
+        let postsArray = Array.prototype.slice.call(posts);
+        postsArray.forEach(function (item) {
+
+            let author = item.getElementsByClassName('author');
+            if(author[0].textContent === user ) {
+                let block = item.getElementsByClassName('ddd');
+                let edit = document.createElement('i');
+                edit.className = 'fas fa-edit';
+                block[0].appendChild(edit);
+                let deleteElement = document.createElement('i');
+                deleteElement.className = 'fas fa-trash-alt';
+                block[0].appendChild(deleteElement);
+            }
+
+        })
     }
 
     let authUser = function ( ) {
         if(user){
             let hed = document.getElementsByClassName('container1');
             let pageSettings = document.createElement('nav');
+            pageSettings.className = "nav_menu";
             let menu = document.createElement('ul');
             menu.className = 'menu';
             hed[0].appendChild(pageSettings);
@@ -85,6 +117,9 @@ let domFunction = (function () {
             let liAdd = document.createElement('li');
             let fotoAdd = document.createElement('i');
             fotoAdd.className = 'fas fa-plus-circle';
+            fotoAdd.onclick = function () {
+                events.eAdd();
+            }
             liAdd.appendChild(fotoAdd);
             menu.appendChild(liAdd);
 
@@ -92,32 +127,22 @@ let domFunction = (function () {
             let formOut = document.createElement('form');
             let buttonLogout = document.createElement('button');
             buttonLogout.className = 'out';
+            buttonLogout.id = 'out';
             buttonLogout.textContent = 'Logout';
             liOut.appendChild(formOut);
             formOut.appendChild(buttonLogout);
             menu.appendChild(liOut);
+            let buttonOut = document.getElementById('out');
+            buttonOut.onclick = function () {
+                events.eExit();
+            }
+            authUser_functions();
 
-
-            let posts = document.getElementsByClassName('column');
-            let postsArray = Array.prototype.slice.call(posts);
-            postsArray.forEach(function (item) {
-
-                let author = item.getElementsByClassName('author');
-                if(author[0].textContent === user ) {
-                    let block = item.getElementsByClassName('ddd');
-                    let edit = document.createElement('i');
-                    edit.className = 'fas fa-edit';
-                    block[0].appendChild(edit);
-                    let deleteElement = document.createElement('i');
-                    deleteElement.className = 'fas fa-trash-alt';
-                    block[0].appendChild(deleteElement);
-                }
-
-            })
 
         }else{
             let hed = document.getElementsByClassName('container1');
             let pageSettings = document.createElement('nav');
+            pageSettings.className = 'nav_menu';
             let menu = document.createElement('ul');
             menu.className = 'menu';
             hed[0].appendChild(pageSettings);
@@ -126,11 +151,17 @@ let domFunction = (function () {
             let liIn = document.createElement('li');
             let formIn = document.createElement('form');
             let buttonIn = document.createElement('button');
-            buttonIn.className = 'out';
+            buttonIn.type = 'button';
+            buttonIn.className = 'logIn';
+            buttonIn.id = 'logIn';
             buttonIn.textContent = 'LOG IN';
             liIn.appendChild(formIn);
             formIn.appendChild(buttonIn);
             menu.appendChild(liIn);
+            let buttonLogIn = document.getElementById('logIn');
+            buttonLogIn.onclick = function () {
+                events.eLogIn();
+            }
         }
     }
 
@@ -169,6 +200,14 @@ let domFunction = (function () {
             dataUsers.appendChild(hashtag);
         })
     };
+    let showPhotoPostsFiler = function(skip, top, filterConfig) {
+        let postsArray = modul.getPhotoPosts(skip, top, filterConfig);
+        if (typeof postsArray === 'object') {
+            domFunction.showPhotoPosts(postsArray);
+            return true;
+        }
+        return false;
+    };
     return {
         filterUsers,
         filterHashtags,
@@ -178,20 +217,15 @@ let domFunction = (function () {
         editPhotoPost,
         deletePhotoPost,
         showPhotoPosts,
-        addPhotoPost
+        addPhotoPost,
+        showPhotoPostsFiler,
+        authUser_functions
+
     }
 })();
 
 
 
-function showPhotoPosts(skip, top, filterConfig) {
-    let postsArray = modul.getPhotoPosts(skip, top, filterConfig);
-    if (typeof postsArray === 'object') {
-        domFunction.showPhotoPosts(postsArray);
-        return true;
-    }
-    return false;
-}
 
 function editPhotoPost(id,photoPost) {
     domFunction.editPhotoPost(id,photoPost);
@@ -217,18 +251,7 @@ function addPhotoPosts() {
     return false;
 }
 
-
-showPhotoPosts(0,10);
-deletePhotoPost('15');
-
-editPhotoPost('17', {author: '1234567777'});
-
-
-
-
-
+domFunction.showPhotoPostsFiler(0,10);
 authUser();
-like('19');
 domFunction.filterHashtags();
 domFunction.filterUsers();
-console.log(photoPosts);
