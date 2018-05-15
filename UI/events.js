@@ -11,7 +11,18 @@ let events = (function () {
     }
 
     let eAdd = function () {
-        add();
+        let dialog = document.getElementById('window-add');
+        let enter = document.getElementById('publish_post');
+        enter.addEventListener('click' ,add);
+        let data = document.getElementsByClassName('data')[0];
+        data.textContent = dataFormat();
+        let hashtags = document.getElementById('hashtag');
+        hashtags.value = "";
+        let description = document.getElementById('description');
+        description.value = "";
+        let image = document.getElementById('image');
+        image.value = '';
+        dialog.showModal();
     }
 
     let eLogIn = function () {
@@ -19,7 +30,7 @@ let events = (function () {
         let enter = document.getElementById('enter');
         enter.addEventListener('click' ,logIn);
         dialog.showModal();
-        ;
+
     }
 
     let eSearch = function () {
@@ -49,7 +60,7 @@ let events = (function () {
     }
 
     function  editPhotoPost(event) {
-        if (user !== null && event.target.className === 'fas fa-edit') {
+        if (user !== null && event.target.className === 'fas fa-edit fa-lg') {
             let target = event.target.parentElement;
             while(target.id === ""){
                 target = target.parentElement;
@@ -59,6 +70,8 @@ let events = (function () {
             let dialog = document.getElementById('window-edit');
             let hashtag = document.getElementById('editHashtag');
             let description = document.getElementById('editDescription');
+            //let date = document.getElementById('editImage').files;
+            //date = post.photoLink;
             hashtag.value = post.hashtags;
             description.value = post.description;
             edit.addEventListener('click' , function () {
@@ -70,6 +83,7 @@ let events = (function () {
                 }
 
             });
+
             dialog.showModal();
         }
     }
@@ -81,7 +95,7 @@ let events = (function () {
     }
 
     function deletePhotoPost(event) {
-        if (user !== null && event.target.className === 'fas fa-trash-alt') {
+        if (user !== null && event.target.className === 'fas fa-trash-alt fa-lg') {
             let target = event.target.parentElement;
             while(target.id === ""){
                 target = target.parentElement;
@@ -92,6 +106,7 @@ let events = (function () {
             buttonOK.addEventListener('click', function (e) {
                 domFunction.deletePhotoPost(target.id);
                 dialog.close();
+                localStorage.setItem('mas', JSON.stringify(photoPosts));
             });
             buttonCancel.addEventListener('click', function (e) {
                 dialog.close();
@@ -101,7 +116,7 @@ let events = (function () {
     }
 
     function likePhoto(event) {
-        if (user !== null && event.target.className === 'far fa-thumbs-up') {
+        if (user !== null && event.target.className === 'far fa-thumbs-up fa-lg') {
             let target = event.target.parentElement;
             while(target.id === ""){
                 target = target.parentElement;
@@ -112,6 +127,7 @@ let events = (function () {
             else {
                 domFunction.unLikePhoto(target.id);
             }
+            localStorage.setItem('mas', JSON.stringify(photoPosts));
         }
     }
 
@@ -134,10 +150,26 @@ let events = (function () {
 
     }
     function add() { // продумать
-        let data = document.getElementsByClassName('data')[0];
-        data.textContent = dataFormat();
+        Data = new Date();
+        let enter = document.getElementById('publish_post');
         let dialog = document.getElementById('window-add');
-        dialog.showModal();
+        let hashtags = document.getElementById('hashtag');
+        let arrayHashtags =  hashtags.value.split(',');
+        let description = document.getElementById('description').value;
+        let image = document.getElementById('image').value;
+        let new_id = +photoPosts[photoPosts.length - 1].id + +1;
+        if(modul.addPhotoPost({id:new_id.toString(),description:description,createdAt:Data,author:user,photoLink:image,hashtags:arrayHashtags , likes:[]}) === true){
+            updatePhotoPosts();
+            let postsArray = modul.getPhotoPosts('0', '10');
+            domFunction.showPhotoPosts(postsArray);
+            domFunction.authUser_functions();
+            localStorage.setItem('mas', JSON.stringify(photoPosts));
+            dialog.close();
+        }else{
+            alert("Проверьте корректность введенных данных!");
+            enter.removeEventListener('click' , add);
+        }
+        enter.removeEventListener('click' , add);
 
     }
 

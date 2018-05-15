@@ -1,4 +1,4 @@
-let photoPosts = [
+let ppp = [
     {
         id: '1',
         description: 'Женская сборная Беларуси выиграла эстафету',
@@ -187,7 +187,7 @@ let photoPosts = [
     },
     {
         id: '22',
-        description: 'пресую студентов',
+        description: 'BSU',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Галя',
         photoLink: '1.jpg',
@@ -195,6 +195,30 @@ let photoPosts = [
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     }
 ];
+
+ let photoPosts = [];
+
+/*function readFromStorage() {
+   /* for(let i = 0 ; i < ppp.length ; i++){
+        localStorage.setItem(ppp[i] , JSON.stringify(ppp[i]));
+    }
+    */
+  // localStorage.setItem("mas",JSON.stringify(ppp));
+  // photoPosts = JSON.parse(localStorage.getItem("mas"));
+  // console.log(photoPosts[0]);
+//}
+function serializable() {
+    let serialObj;
+    localStorage.setItem('mas',JSON.stringify(photoPosts));
+}
+
+
+function readFromStorage() {
+    photoPosts = JSON.parse(localStorage.getItem('mas'));
+    if(photoPosts === null)
+        photoPosts = ppp;
+}
+
 
 let modul = (function() {
     let removePhotoPost = function(value) {
@@ -206,6 +230,8 @@ let modul = (function() {
         }
         return false;
     }
+
+
 /*   function getPhotoPost(value) { // 1й выриант
         for (var i = 0; i < photoPosts.length; i++) {
             if (photoPosts[i].id === value){
@@ -268,7 +294,7 @@ let modul = (function() {
             let idxUser = post.likes.indexOf(user);
             if (idxUser === -1) {
                 post.likes.push(user);
-                return true
+                return true;
             }
             post.likes.splice(idxUser, 1);
         }
@@ -279,6 +305,7 @@ let modul = (function() {
 
     let addPhotoPost = function(photoPost) {
         if(validatePhotoPost(photoPost)){
+            localStorage.setItem(photoPost.id,JSON.stringify(photoPost));
             photoPosts.push(photoPost);
             return true;
         }
@@ -315,7 +342,8 @@ let modul = (function() {
     }
 
     let compareDate = function(photoPostsA,photoPostsB) {
-        return photoPostsA.createdAt - photoPostsB.createdAt;
+        return new Date(photoPostsA.createdAt) - new Date(photoPostsB.createdAt);
+
     }
     let getPhotoPosts = function(skip , top , filterConfig) { // in
 
@@ -328,6 +356,7 @@ let modul = (function() {
                 newMass_posts = newMass_posts.filter(function (item) {
                     return item.author === filterConfig.author;
                 });
+
             }
             if(filterConfig.createdAt){
                 newMass_posts = newMass_posts.filter((function (item) {
@@ -336,15 +365,14 @@ let modul = (function() {
             }
             if(filterConfig.hashtags){
                 newMass_posts = newMass_posts.filter(function (item) {
-                    return item.hashtags.some(function (itemm) {
+                        return item.hashtags.some(function (itemm) {
                         return itemm === filterConfig.hashtags;
                     });
 
                 })
             }
+            newMass_posts = newMass_posts.reverse(newMass_posts.sort(compareDate));
             return newMass_posts.slice(skip,skip+top);
-
-
         }
 
     }

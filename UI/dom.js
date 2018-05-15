@@ -1,9 +1,9 @@
-let user = "";
+let user = "Никита";
 
 let domFunction = (function () {
 
-    function formatDate(date) {
-
+    function formatDate(date_string) {
+        let date = new Date(date_string);
         let dd = date.getDate();
         if (dd < 10) dd = '0' + dd;
 
@@ -17,7 +17,6 @@ let domFunction = (function () {
     };
 
     let showPhotoPosts = function (arrayPhotoPosts) {
-        arrayPhotoPosts.reverse();
         arrayPhotoPosts.forEach(function (value) {
             addPhotoPost(value);
         });
@@ -25,16 +24,21 @@ let domFunction = (function () {
         events.eLikePhoto(hed);
         events.eDeletePhotoPost(hed);
         events.eEdit(hed);
+        for(let i = 0; i <arrayPhotoPosts.length ; i++){
+            let idxUser = arrayPhotoPosts[i].likes.indexOf(user);
+            if(idxUser !== -1){
+                likePhoto(arrayPhotoPosts[i].id);
+            }
+        }
 
     };
 
     let addPhotoPost = function (photoPost) {
-
         const templatePhotoPost =
             `<div class="column" id="${photoPost.id}">`+
             `<div class="foto" ><img src="${photoPost.photoLink}"></div>` +
             `<div class="ddd">` +
-            `<i class="far fa-thumbs-up" ></i>`+
+            `<i class="far fa-thumbs-up fa-lg" ></i>`+
             `</div>` +
             `<div class="description"><p1>${photoPost.description}</p1></div>` +
             `<div class="hashtag"><p1>${photoPost.hashtags}</p1></div>` +
@@ -87,10 +91,10 @@ let domFunction = (function () {
             if(author[0].textContent === user ) {
                 let block = item.getElementsByClassName('ddd');
                 let edit = document.createElement('i');
-                edit.className = 'fas fa-edit';
+                edit.className = 'fas fa-edit fa-lg';
                 block[0].appendChild(edit);
                 let deleteElement = document.createElement('i');
-                deleteElement.className = 'fas fa-trash-alt';
+                deleteElement.className = 'fas fa-trash-alt fa-lg';
                 block[0].appendChild(deleteElement);
             }
 
@@ -176,13 +180,13 @@ let domFunction = (function () {
 
     let likePhoto = function(id) {
         let post = document.getElementById(id);
-        let like = post.getElementsByClassName('far fa-thumbs-up');
+        let like = post.getElementsByClassName('far fa-thumbs-up fa-lg');
         like[0].style.color = '#ff0000';
     }
 
     let unLikePhoto = function (id) {
         let post = document.getElementById(id);
-        let unLike = post.getElementsByClassName('far fa-thumbs-up');
+        let unLike = post.getElementsByClassName('far fa-thumbs-up fa-lg');
         unLike[0].style.color = '#000000';
     }
 
@@ -223,10 +227,7 @@ let domFunction = (function () {
 
     }
 })();
-
-
-
-
+readFromStorage();
 function editPhotoPost(id,photoPost) {
     domFunction.editPhotoPost(id,photoPost);
 }

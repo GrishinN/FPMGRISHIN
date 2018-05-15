@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <dialog id="window-authorization" class="win_authorization">
+<dialog id="window-authorization" class="win_authorization">
     <form class="authorization" name="authorization">
         <h3>ВХОД В АККАУНТ</h3>
         <ul>
@@ -36,11 +36,15 @@
 
   <dialog id="window-add" class="add">
       <div class="box modal-box">
-          <h2>Delete</h2>
-          <h3>Are you sure you want to delete the post?</h3>
+          <h2>Add</h2>
 
-          <form method="dialog-add" name="add">
-              <ul>
+          <form class="dialog-add" method="dialog-add" name="add">
+              <ul class="ulAdd">
+                  <li>
+                      <form name="uploadPhoto">
+                          <input type="file" id ="image" name="inputPhoto">
+                      </form>
+                  </li>
                   <li>
                       <input type="text" id="hashtag" value="" placeholder="Введите хештеги">
                   </li>
@@ -51,29 +55,30 @@
                       <a class="data"></a>
                   </li>
               </ul>
-              <button type="button" id="publish_post">Опубликовать</button>
+              <button type="button" id="publish_post">Publish</button>
           </form>
       </div>
   </dialog>
 
   <dialog id="window-edit" class="edit">
       <div class="box modal-box">
-          <h2>Delete</h2>
-          <h3>Are you sure you want to delete the post?</h3>
+          <h2>Edit</h2>
 
           <form method="dialog-edit" name="edit_post">
-              <ul>
+              <ul class="ulEdit">
                   <li>
                       <input type="text" id="editHashtag" value="" placeholder="Введите хештеги">
                   </li>
                   <li>
                       <input type="text" id="editDescription" value="" placeholder="Введите описание">
                   </li>
-                  <li>
-                      <a class="error"></a>
-                  </li>
+                  <!-- <li>
+                      <form name="uploadPhoto">
+                          <input type="file" id ="editImage" value="" name="inputPhoto">
+                      </form>
+                 </li> -->
               </ul>
-              <button type="button" id="editPhotoPost">Редактировать</button>
+              <button type="button" id="editPhotoPost">Change</button>
           </form>
       </div>
   </dialog>
