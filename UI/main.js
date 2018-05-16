@@ -1,7 +1,7 @@
 let photoPosts = [
     {
         id: '1',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2010-02-23T23:00:00'),
         author: 'БУтырчик Андрей',
         photoLink: '1.jpg',
@@ -10,7 +10,7 @@ let photoPosts = [
     },
     {
         id: '2',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2009-02-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -19,16 +19,16 @@ let photoPosts = [
     },
     {
         id: '3',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2011-02-23T23:00:00'),
-        author: 'Гора ',
+        author: 'Гора',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
         hashtags: ['#fpmi' , '#bsu' , '#js'],
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },
     {
         id: '4',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Alex',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -37,7 +37,7 @@ let photoPosts = [
     },
     {
         id: '5',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'NAgibator',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -46,7 +46,7 @@ let photoPosts = [
     },
     {
         id: '6',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('1999-04-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -55,7 +55,7 @@ let photoPosts = [
     },
     {
         id: '7',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -64,7 +64,7 @@ let photoPosts = [
     },
     {
         id: '8',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-05-04T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -73,7 +73,7 @@ let photoPosts = [
     },
     {
         id: '9',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2013-02-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -82,7 +82,7 @@ let photoPosts = [
     },
     {
         id: '10',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'lena lena',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -91,7 +91,7 @@ let photoPosts = [
     },
     {
         id: '11',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -100,7 +100,7 @@ let photoPosts = [
     },
     {
         id: '12',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-02-25T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -108,7 +108,7 @@ let photoPosts = [
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },{
         id: '13',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2015-02-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
@@ -117,7 +117,7 @@ let photoPosts = [
     },
     {
         id: '14',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2017-06-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: '1.jpg',
@@ -125,7 +125,7 @@ let photoPosts = [
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },{
         id: '15',
-        descriprion: 'Бла бла бла бла',
+        description: 'Бла бла бла бла',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Никита',
         photoLink: '1.jpg',
@@ -133,7 +133,7 @@ let photoPosts = [
         likes: ['Иванов Иван' , 'Бутырчик Андрей' , 'Гора']
     },{
         id: '16',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2013-03-13T23:00:00'),
         author: 'Иванов Иван',
         photoLink: '1.jpg',
@@ -142,7 +142,7 @@ let photoPosts = [
     },
     {
         id: '17',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2016-02-23T23:00:00'),
         author: 'Иванов Иван',
         photoLink: '1.jpg',
@@ -151,7 +151,7 @@ let photoPosts = [
     },
     {
         id: '18',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2015-05-05T23:00:00'),
         author: 'Александр Петухов',
         photoLink: '1.jpg',
@@ -160,7 +160,7 @@ let photoPosts = [
     },
     {
         id: '19',
-        descriprion: 'Женская сборная Беларуси',
+        description: 'Женская сборная Беларуси выиграла эстафету эстафету эстафету эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Вася Пупкин',
         photoLink: '1.jpg',
@@ -169,7 +169,7 @@ let photoPosts = [
     },
     {
         id: '20',
-        descriprion: 'Женская сборная Беларуси выиграла эстафету',
+        description: 'Женская сборная Беларуси выиграла эстафету',
         createdAt: new Date('2018-02-23T23:00:00'),
         author: 'Никита',
         photoLink: '1.jpg',
@@ -217,7 +217,7 @@ let modul = (function() {
         if((typeof photoPosts.id !== "string") || photoPosts.id.length === 0 || (typeof (photoPosts.id) === 'undefined')) {
             return false;
         }
-        if((typeof photoPosts.descriprion !== "string") || photoPosts.descriprion.length === 0 || photoPosts.descriprion.length > 200 || typeof (photoPosts.descriprion) === 'undefined') {
+        if((typeof photoPosts.description !== "string") || photoPosts.description.length === 0 || photoPosts.description.length > 200 || typeof (photoPosts.description) === 'undefined') {
             return false;
         }
         if(typeof photoPosts.createdAt !== "object" || photoPosts.createdAt.length === 0 || typeof (photoPosts.createdAt) === 'undefined')   {
@@ -309,19 +309,3 @@ let modul = (function() {
     }
 
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
