@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="styles.css" rel="stylesheet">
+    <link href="fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <title>PhotoPortal</title>
+</head>
+<body>
+
+<dialog id="window-authorization" class="win_authorization">
+    <form class="authorization" name="authorization">
+        <h3>ВХОД В АККАУНТ</h3>
+        <ul>
+        <li>
+            <input type="text" id="login" value="" placeholder="Введите логин">
+        </li>
+        <li>
+            <input type="text" id="password" value="" placeholder="Введите пароль">
+        </li>
+        </ul>
+            <button type="button" id="enter">Войти</button>
+    </form>
+</dialog>
+
+  <dialog id="window-delete" class="window">
+      <div class="box modal-box">
+          <h2>Delete</h2>
+          <h3>Are you sure you want to delete the post?</h3>
+          <form method="dialogg" name="confirm-delete">
+              <button type="button" value="Yes"  class="button_delete">OK</button>
+              <button type="button" value="Cancel"  class="button_no_delete">Cancel</button>
+          </form>
+      </div>
+  </dialog>
+
+  <dialog id="window-add" class="add">
+      <div class="box modal-box">
+          <h2>Add</h2>
+
+          <form class="dialog-add" method="dialog-add" name="add">
+              <ul class="ulAdd">
+                  <li>
+                      <form name="uploadPhoto">
+                          <input type="file" id ="image" name="inputPhoto">
+                      </form>
+                  </li>
+                  <li>
+                      <input type="text" id="hashtag" value="" placeholder="Введите хештеги">
+                  </li>
+                  <li>
+                      <input type="text" id="description" value="" placeholder="Введите описание">
+                  </li>
+                  <li>
+                      <a class="data"></a>
+                  </li>
+              </ul>
+              <button type="button" id="publish_post">Publish</button>
+          </form>
+      </div>
+  </dialog>
+
+  <dialog id="window-edit" class="edit">
+      <div class="box modal-box">
+          <h2>Edit</h2>
+
+          <form method="dialog-edit" name="edit_post">
+              <ul class="ulEdit">
+                  <li>
+                      <input type="text" id="editHashtag" value="" placeholder="Введите хештеги">
+                  </li>
+                  <li>
+                      <input type="text" id="editDescription" value="" placeholder="Введите описание">
+                  </li>
+                  <!-- <li>
+                      <form name="uploadPhoto">
+                          <input type="file" id ="editImage" value="" name="inputPhoto">
+                      </form>
+                 </li> -->
+              </ul>
+              <button type="button" id="editPhotoPost">Change</button>
+          </form>
+      </div>
+  </dialog>
+
+<header>
+    <div class="container1">
+        <h1>PhotoPortal</h1>
+    </div>
+</header>
+<section>
+    <div class="container">
+        <div class ="filter">
+
+            <div class="content_filter">
+
+                <form class="contact_form" action="" method="post" name="contact_form">
+                    <ul>
+                        <li>
+                            <h2>Filter</h2>
+                        </li>
+                        <li>
+                            <input type="text" class="filter_users" list="name" placeholder="user" />
+                            <datalist id="name">
+                            </datalist>
+                        </li>
+                        <li>
+                            <input type="text" class="filter_hashtags" list="hashtags" placeholder="#hashtag"/>
+                            <datalist id="hashtags">
+                            </datalist>
+                        </li>
+
+                        <li>
+                            <input type="text" class="filter_data" name="data" placeholder="data" />
+                        </li>
+                        <li>
+                            <button class="search" onclick="events.eSearch()" type="button">Поиск</button>
+                        </li>
+                    </ul>
+
+
+
+                </form>
+
+            </div>
+
+        </div>
+        <div class = "photo">
+            <div class="len1">
+
+            </div>
+        </div>
+        <button class="load" onclick="events.eShowMorePhotoPosts()">Load more</button>
+    </div>
+
+</section>
+<footer>
+    <div class="footerr"><p>©02.2018 PhotoPortal by Nikita Grishin 2course 13 group , grishinnikitaa@gmail.com</p></div>
+</footer>
+
+</body>
+<script src = "events.js"></script>
+<script src = "main.js"></script>
+<script src = "dom.js"></script>
+
+</html>
