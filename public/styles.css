@@ -1,0 +1,601 @@
+body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-image: url(2.jpg);
+}
+section{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.container1{
+    overflow: hidden;
+}
+.container{
+    /* margin: 0 auto;*/
+    font-family: "Bradley Hand ITC";
+    overflow: hidden;
+}
+
+dialog {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+.dialog-add input{
+    width: 300px;
+}
+
+dialog::backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.filter{
+    margin-left: 3%;
+    float: left;
+    height: 400px;
+    width: 300px;
+
+
+}
+.content_filter{
+    outline: 2px solid #000;
+    border-radius: 6px;
+    height: 350px;
+    width: 270px;
+    position: relative;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+
+
+
+header{
+    height: 100px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.logIn{
+    float: right;
+    margin-right: 20px;
+    font-size: 25px;
+    font-family: "Bradley Hand ITC";
+    font-weight: bold;
+    background-image: none;
+    background-color: transparent;
+    border: 2px double #e34761;
+}
+
+.out{
+    float: right;
+    margin-right: 20px;
+    font-size: 25px;
+    font-family: "Bradley Hand ITC";
+    font-weight: bold;
+    background-image: none;
+    background-color: transparent;
+    border: 2px double #e34761;
+}
+
+
+h1{
+    font-size: 40px;
+    color: #3355aa;
+    float: left;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+a{
+    font-size: 35px;
+    text-decoration: none;
+    font-family: "Bradley Hand ITC";
+}
+h2{
+    display: block;
+    margin-left: 120px;
+    color: #3355aa;
+}
+
+nav{
+    float: right;
+}
+
+.menu{
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.ulAdd li{
+    list-style-type:none;
+    padding:10px;
+    position:relative;
+}
+
+.ulEdit li{
+    list-style-type:none;
+    margin-top: 10px;
+}
+
+.menu li{
+    float: left;
+    display: block;
+    margin-top: 30px;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.author{
+    display: inline-block;
+    margin-left: 15%;
+}
+
+:-moz-placeholder {
+    color: blue;
+}
+::-webkit-input-placeholder {
+    color: blue;
+}
+
+.contact_form ul {
+    list-style-type:none;
+    list-style-position:outside;
+    margin:0;
+    padding:0;
+}
+.authorization li{
+    padding:10px;
+    position:relative;
+    list-style-type: none;
+}
+
+.contact_form li{
+    padding:12px;
+    border-bottom:1px solid #eee;
+    position:relative;
+}
+
+.contact_form label {
+    width:40px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
+.contact_form input {
+    height:20px;
+    width:200px;
+    padding:5px 8px;
+    background-image: url(3.jpg);
+    font-family: "Bradley Hand ITC";
+    font-size: 25px;
+    border: 2px double #e34761;
+
+}
+.contact_form textarea {padding:8px; width:300px;}
+
+.contact_form button {margin-left:156px;}
+
+.date{
+    float: right;
+    margin-right: 5%;
+}
+
+.column {
+    outline: 2px solid #000;
+    margin-bottom: 20px;
+    margin-right: 25px;
+    height: 400px;
+    width: 250px;
+    display: inline-block;
+    vertical-align: bottom;
+
+
+}
+footer{
+    display: inline-block;
+    width: 100%;
+}
+.len1{
+    height:auto;
+    float: left;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.photo{
+    height:auto;
+    margin-right: 3%;
+    /* float: left; */
+    display: block;
+    vertical-align: bottom;
+    overflow: hidden;
+
+}
+.ph10{
+    width: 100px;
+    height: 100px;
+}
+
+
+.menu1{
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+.menu1 li{
+    display: block;
+    float: left;
+}
+
+p1{
+    font-size: 17px;
+}
+
+.description{
+    overflow: auto;
+    height: 70px;
+    clear: both;
+    margin-left: 10px;
+
+}
+
+.date_author{
+    float: right;
+    border-radius: 5px;
+}
+
+
+
+.hashtag {
+    height: 45px;
+    margin-left: 10px;
+}
+.ddd{
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.ddd i{
+    display:inline-block;
+    margin-top: -20px;
+}
+
+.foto img{
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block;
+}
+
+.load{
+    float: right;
+    margin-top: -5px;
+    font-size: 25px;
+    margin-right: 50px;
+    font-family: "Bradley Hand ITC";
+    font-weight: bold;
+    background-image: none;
+    background-color: transparent;
+    border: 2px double #e34761;
+}
+
+.footerr p{
+    text-align: center;
+    font-family: Chiller;
+    font-size: 25px;
+    color: mediumblue;
+}
+
+.search{
+    font-family: "Bradley Hand ITC";
+    background-image: none;
+    background-color: transparent;
+    border: 2px double #e34761;
+    font-weight: bold;
+
+}
+
+@media screen and (max-width: 960px){
+
+    .column {
+        outline: 2px solid #000;
+        margin-bottom: 20px;
+        margin-right: 15px;
+        height: 230px;
+        float: left;
+        width: 150px;
+        display: inline-block;
+        vertical-align: bottom;
+
+
+    }
+
+    .container{
+        width: 100%;
+        margin: 0 auto;
+        height: auto;
+        font-family: "Bradley Hand ITC";
+
+    }
+
+
+    .filter{
+        float: left;
+        height: 700px;
+        width: 260px;
+
+    }
+
+    header{
+        height: 100px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .content_filter{
+        outline: 2px solid #000;
+        border-radius: 6px;
+        height: 300px;
+        width: 235px;
+        position: relative;
+        margin-top: 40px;
+        margin-left: 20px;
+        margin-top: 40%;
+    }
+    .logIn{
+        float: right;
+        margin-right: 20px;
+        font-size: 25px;
+        font-family: "Bradley Hand ITC";
+        font-weight: bold;
+        background-image: none;
+        background-color: transparent;
+        border: 2px double #e3122b;
+    }
+    .out{
+        float: right;
+        margin-right: 20px;
+        font-size: 25px;
+        font-family: "Bradley Hand ITC";
+        font-weight: bold;
+        background-image: none;
+        background-color: transparent;
+        border: 2px double #e3122b;
+    }
+
+    .contact_form ul {
+        margin:0;
+        padding:0;
+    }
+    .contact_form li{
+        padding:12px;
+        border-bottom:1px solid #eee;
+        position:relative;
+        font-size: 20px;
+        height: 30px;
+    }
+
+    .contact_form label {
+        width:30px;
+        margin-top: 3px;
+        display:inline-block;
+        float:left;
+        padding:3px;
+    }
+    .contact_form textarea {padding:8px; width:300px;}
+
+    .contact_form button {margin-left:120px;}
+
+    .submit{
+        font-family: "Bradley Hand ITC";
+        background-image: none;
+        background-color: transparent;
+        border: 2px double #e34761;
+        font-weight: bold;
+    }
+    h2{
+        display: block;
+        margin-top:10px;
+        color: #3355aa;
+    }
+
+    .len1{
+        height:auto ;
+        width: 560px;
+        float: left;
+        margin-left: 40px;
+        margin-top: 20px;
+
+    }
+
+    .photo{
+
+        height:auto ;
+        width: 600px;
+        float: left;
+        display: inline-block;
+        vertical-align: bottom;
+
+    }
+
+    .column {
+        outline: 2px solid #000;
+        margin-bottom: 20px;
+        margin-right: 35px;
+        height: 230px;
+        width: 150px;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+    .footerr p{
+        text-align: center;
+        font-family: Chiller;
+        font-size: 25px;
+        color: mediumblue;
+        clear: both;
+    }
+
+    .foto img{
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        margin-top: 20px;
+        display: block;
+    }
+
+
+
+
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        margin: 0 auto;
+        height: auto;
+        font-family: "Bradley Hand ITC";
+    }
+
+    .filter {
+        float: left;
+        height: auto;
+        width: 250px;
+        height: auto;
+
+    }
+
+    header {
+        height: 100px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .content_filter {
+        outline: 2px solid #000;
+        border-radius: 6px;
+        height: 300px;
+        width: 220px;
+        position: relative;
+        margin-top: 40px;
+        margin-left: 20px;
+        margin-top: 40%;
+    }
+
+    .out {
+        float: right;
+        margin-right: 20px;
+        font-size: 25px;
+        font-family: "Bradley Hand ITC";
+        font-weight: bold;
+        background-image: none;
+        background-color: transparent;
+        border: 2px double #e3122b;
+    }
+
+    .contact_form ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .contact_form li {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        font-size: 20px;
+        height: 30px;
+    }
+
+    .contact_form label {
+        width: 30px;
+        margin-top: 3px;
+        display: inline-block;
+        float: left;
+        padding: 3px;
+    }
+
+    .contact_form textarea {
+        padding: 8px;
+        width: 300px;
+    }
+
+    .contact_form button {
+        margin-left: 120px;
+    }
+
+    .submit {
+        font-family: "Bradley Hand ITC";
+        background-image: none;
+        background-color: transparent;
+        border: 2px double #e34761;
+        font-weight: bold;
+    }
+
+
+
+    .len1 {
+        height: auto;
+        width: 350px;
+        margin-left: 40px;
+        margin-top: 20px;
+        float: left;
+    }
+
+    .photo {
+        height: auto;
+        width: auto;
+        float: left;
+        display: inline-block;
+        vertical-align: bottom;
+
+    }
+
+    .column {
+        outline: 2px solid #000;
+        margin-bottom: 20px;
+        margin-right: 25px;
+        height: 230px;
+        width: 150px;
+        display: inline-block;
+        vertical-align: bottom;
+        font-weight: bold;
+    }
+
+    .contact_form input {
+        height:20px;
+        width: 170px;
+        padding:5px 8px;
+        background-image: url(3.jpg);
+        font-family: "Bradley Hand ITC";
+        font-size: 25px;
+        border: 2px double #e34761;
+
+    }
+
+    .foto img{
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        margin-top: 20px;
+        display: block;
+    }
+
+
+
+}
