@@ -72,8 +72,8 @@ let domFunction = (function () {
                 photoLink.src = photoPost.photoLink;
             }
             if('hashtags' in photoPost){
-                let hashtags_mas = post.getElementsByClassName('hashtag');
-                let photoLink = hashtags_mas[0].firstChild;
+                let hashtagsMas = post.getElementsByClassName('hashtag');
+                let photoLink = hashtagsMas[0].firstChild;
                 photoLink.textContent = photoPost.hashtags;
             }
             return true;
@@ -81,7 +81,7 @@ let domFunction = (function () {
         return false;
     }
 
-    let authUser_functions = function () {
+    let authUserFunctions = function () {
 
         let posts = document.getElementsByClassName('column');
         let postsArray = Array.prototype.slice.call(posts);
@@ -140,7 +140,7 @@ let domFunction = (function () {
             buttonOut.onclick = function () {
                 events.eExit();
             }
-            authUser_functions();
+            authUserFunctions();
 
 
         }else{
@@ -171,10 +171,14 @@ let domFunction = (function () {
 
     let filterUsers = function () {
         let dataUsers = document.getElementById('name');
+        let masUsers = [];
         photoPosts.forEach(function (item) {
             let userName = document.createElement('option');
             userName.value = item.author;
-            dataUsers.appendChild(userName);
+            if (masUsers.indexOf(item.author) === -1) {
+                masUsers.push(userName.value);
+                dataUsers.appendChild(userName);
+            }
         })
     };
 
@@ -223,7 +227,7 @@ let domFunction = (function () {
         showPhotoPosts,
         addPhotoPost,
         showPhotoPostsFiler,
-        authUser_functions
+        authUserFunctions
 
     }
 })();
