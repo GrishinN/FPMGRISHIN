@@ -56,7 +56,7 @@ let events = (function () {
         let searchData = document.getElementsByClassName('filter_data')[0].value;
         updatePhotoPosts();
         domFunction.showPhotoPostsFiler('0','10',{author: searchUser, hashtags: searchHashtags , createdAt: searchData});
-        domFunction.authUser_functions();
+        domFunction.authUserFunctions();
     }
 
     function  editPhotoPost(event) {
@@ -157,12 +157,12 @@ let events = (function () {
         let arrayHashtags =  hashtags.value.split(',');
         let description = document.getElementById('description').value;
         let image = document.getElementById('image').value;
-        let new_id = +photoPosts[photoPosts.length - 1].id + +1;
-        if(modul.addPhotoPost({id:new_id.toString(),description:description,createdAt:Data,author:user,photoLink:image,hashtags:arrayHashtags , likes:[]}) === true){
+        let newId = +photoPosts[photoPosts.length - 1].id + +1;
+        if(modul.addPhotoPost({id:newId.toString(),description:description,createdAt:Data,author:user,photoLink:image,hashtags:arrayHashtags , likes:[]}) === true){
             updatePhotoPosts();
             let postsArray = modul.getPhotoPosts('0', '10');
             domFunction.showPhotoPosts(postsArray);
-            domFunction.authUser_functions();
+            domFunction.authUserFunctions();
             localStorage.setItem('mas', JSON.stringify(photoPosts));
             dialog.close();
         }else{
